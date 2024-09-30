@@ -1,0 +1,39 @@
+```mermaid
+flowchart TD
+Start([Start])--> End([End])
+```
+Const MAX_GUESSES = 7
+Const UPPER_LIMIT = 100
+ Var ranNum, userGuess, guessCount
+Output "Guessing Game"
+Output "----------"
+Output "By: Your Name"
+Output "Date: Current Date"
+Output "-----------"
+While true // Outer loop for multiple games
+ranNum = Random (UPPER_LIMIT)+1 // Generate randomg number (1 to UPPER_LIMIT)
+guessCount = 0 // Initialize guess count to 0
+While guessCount < MAX_GUESSES
+Output "------------------"
+Output "Guess a number between 1 and", UPPER_LIMIT
+Input "Enter your guess: ", userGuess
+If userGuess = ranNum
+Output "Congratulations! You guesses correctly."
+Break                   //Exity the inner loop if the guess is correct
+Else If userGuess < ranNum
+Output "Too low. Try again."
+Else
+Output "Too high. Try again."
+EndIf
+guessCount = guessCount + 1
+Endwhile
+If userGuess <> ranHum
+Output "Sorry, you've run out of guesses. The correct number was", ranNum
+EndIf
+Input "Do you want to play again? (y/n):", playAgain
+If playAgain <> "Y" And playAgain <> "y"
+Break                   //Exit the outer loop if the player chooses not to play again
+EndIf
+EndWhile
+Output "Thanks for playing!"
+EndProgram
